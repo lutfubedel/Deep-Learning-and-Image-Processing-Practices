@@ -1,4 +1,4 @@
-# 🌸 CNN ile Çiçek Türü Sınıflandırma
+# CNN ile Çiçek Türü Sınıflandırma
 
 Bu proje, **TensorFlow ve Keras** kullanılarak **Convolutional Neural Network (CNN)** mimarisi ile çiçek görüntülerinin sınıflandırılmasını amaçlamaktadır.  
 Model, **TF Flowers** veri seti üzerinde eğitilmiştir.
