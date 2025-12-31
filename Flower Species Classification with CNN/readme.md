@@ -70,4 +70,4 @@ uygulanmıştır.
 
 ---
 ## 📊 Çıktı
-![Training & Validation Accuracy Grafiği](images/img-1.png])
+![Görsel](images/img-1.png])
