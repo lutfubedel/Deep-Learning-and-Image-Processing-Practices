@@ -70,4 +70,4 @@ uygulanmıştır.
 
 ---
 ## 📊 Çıktı
-![Görsel](images/img-1.png])
+![Görsel](images/img-1.png)
