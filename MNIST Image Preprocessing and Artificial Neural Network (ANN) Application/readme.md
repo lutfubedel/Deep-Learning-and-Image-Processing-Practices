@@ -86,8 +86,5 @@ Eğitim sürecinde **accuracy** ve **loss** değerleri hem eğitim hem doğrulam
 
 ---
 
-## ▶️ Kurulum ve Çalıştırma
-
-### 1️⃣ Sanal ortam oluşturma
-```bash
-python -m venv venv
+## 📊 Çıktı
+![Görsel](images/Figure_1.png)
