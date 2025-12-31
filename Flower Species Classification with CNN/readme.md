@@ -1,93 +1,73 @@
-# MNIST Görüntü Ön İşleme ve Yapay Sinir Ağı (ANN) Uygulaması
+# CNN ile Çiçek Türü Sınıflandırma
 
-Bu proje, **MNIST el yazısı rakam veri seti** üzerinde **OpenCV tabanlı görüntü ön işleme teknikleri** uygulanarak elde edilen özellikler ile **Yapay Sinir Ağı (Artificial Neural Network - ANN)** eğitilmesini amaçlamaktadır.
-
-Proje kapsamında klasik ham piksel kullanımı yerine, kenar tabanlı özellik çıkarımı yapılarak sınıflandırma performansı incelenmiştir.
+Bu proje, **TensorFlow ve Keras** kullanılarak **Convolutional Neural Network (CNN)** mimarisi ile çiçek görüntülerinin sınıflandırılmasını amaçlamaktadır.  
+Model, **TF Flowers** veri seti üzerinde eğitilmiştir.
 
 ---
 
-## 🚀 Projenin Amacı
+## 🎯 Amaç
 
-- Görüntü ön işleme tekniklerinin sınıflandırma üzerindeki etkisini incelemek  
-- OpenCV kullanarak histogram eşitleme, bulanıklaştırma ve kenar algılama uygulamak  
-- Ön işlenmiş görüntüler ile ANN modeli eğitmek  
-- Eğitim ve doğrulama sonuçlarını görselleştirmek  
+- CNN tabanlı bir görüntü sınıflandırma modeli geliştirmek
+- Data augmentation ile modelin genelleme yeteneğini artırmak
+- Eğitim ve doğrulama performanslarını görsel olarak analiz etmek
 
 ---
 
 ## 🧠 Kullanılan Teknolojiler
 
-- **Python 3.9+**
-- **TensorFlow / Keras**
-- **OpenCV**
-- **NumPy**
-- **Matplotlib**
+- Python
+- TensorFlow & Keras
+- TensorFlow Datasets
+- Matplotlib
 
 ---
 
 ## 📂 Veri Seti
 
-- **MNIST Handwritten Digits Dataset**
-- 28x28 boyutunda gri seviye el yazısı rakam görüntüleri
-- 0–9 arası 10 sınıf
+**TF Flowers** veri seti kullanılmıştır.
+
+**Sınıflar:**
+- Daisy
+- Dandelion
+- Roses
+- Sunflowers
+- Tulips
+
+**Bölünme:**
+- %80 Eğitim
+- %20 Doğrulama
 
 ---
 
-## 🔍 Görüntü Ön İşleme Adımları
+## 🏗️ Model Özeti
 
-Her bir MNIST görüntüsü için aşağıdaki işlemler uygulanmıştır:
-
-1. **Histogram Equalization**  
-   - Görüntü kontrastını artırmak için kullanılmıştır.
-
-2. **Gaussian Blur**  
-   - Gürültüyü azaltmak ve kenar algılamayı iyileştirmek için uygulanmıştır.
-
-3. **Canny Edge Detection**  
-   - Rakamların kenarlarını belirgin hale getirmek için kullanılmıştır.
-
-4. **Flatten & Normalization**  
-   - 28x28 görüntüler 784 boyutlu vektöre dönüştürülmüş ve 0–1 aralığında normalize edilmiştir.
+- 3 adet Convolution + MaxPooling bloğu  
+- 1 adet Dense katman  
+- Dropout ile overfitting önleme  
+- Softmax çıkış katmanı (5 sınıf)
 
 ---
 
-## 🧪 Model Mimarisi (ANN)
+## 🔄 Data Augmentation
 
-Kullanılan yapay sinir ağı mimarisi:
+Eğitim sırasında:
+- Yatay çevirme
+- Parlaklık ve kontrast değişimi
+- Rastgele kırpma  
 
-- Girdi Katmanı: 784 nöron  
-- Gizli Katman 1: 128 nöron (ReLU)  
-- Dropout: %50  
-- Gizli Katman 2: 64 nöron (ReLU)  
-- Çıkış Katmanı: 10 nöron (Softmax)
-
-**Kayıp Fonksiyonu:** Sparse Categorical Crossentropy  
-**Optimizasyon:** Adam  
-**Öğrenme Oranı:** 0.001  
+uygulanmıştır.
 
 ---
 
-## 📊 Eğitim Detayları
+## ⚙️ Eğitim
 
-- Eğitim verisi: 10.000 örnek  
-- Test verisi: 2.000 örnek  
-- Epoch sayısı: 10  
-- Batch size: 32  
-
-Eğitim sürecinde **accuracy** ve **loss** değerleri hem eğitim hem doğrulama seti için izlenmiştir.
-
----
-
-## 📈 Sonuçlar
-
-- Model, ön işlenmiş kenar tabanlı özellikler ile makul bir doğruluk oranına ulaşmıştır.
-- Ham piksel tabanlı yaklaşıma kıyasla farklı bir özellik çıkarım yöntemi denenmiştir.
-- Eğitim süreci grafiklerle analiz edilmiştir.
+- Optimizer: Adam  
+- Loss: Sparse Categorical Crossentropy  
+- Callback’ler:
+  - EarlyStopping
+  - ReduceLROnPlateau
+  - ModelCheckpoint
 
 ---
-
-## ▶️ Kurulum ve Çalıştırma
-
-### 1️⃣ Sanal ortam oluşturma
-```bash
-python -m venv venv
+## 📊 Çıktı
+(Training & Validation Accuracy Grafiği)[images/img_1.png]
