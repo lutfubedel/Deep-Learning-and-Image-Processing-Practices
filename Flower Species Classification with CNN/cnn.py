@@ -1,13 +1,9 @@
 # =========================================================
 # Gerekli kütüphanelerin yüklenmesi
 # =========================================================
-# Sanal ortam oluşturma:
 # python -m venv venv
-# Sanal ortamı aktif etme (Windows):
 # .\venv\Scripts\activate
-# Gerekli kütüphanelerin kurulumu:
 # pip install tensorflow==2.13.0 tensorflow-datasets==4.9.2 matplotlib opencv-python
-# Kurulu paketlerin kaydedilmesi:
 # pip freeze > requirements.txt
 
 from tensorflow_datasets import load              # Hazır veri setlerini kolayca indirmek için
