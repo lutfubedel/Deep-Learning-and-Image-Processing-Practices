@@ -1,73 +1,12 @@
-# CNN ile Çiçek Türü Sınıflandırma
+# 🧥 Fashion MNIST - DCGAN ile Görüntü Üretimi
 
-Bu proje, **TensorFlow ve Keras** kullanılarak **Convolutional Neural Network (CNN)** mimarisi ile çiçek görüntülerinin sınıflandırılmasını amaçlamaktadır.  
-Model, **TF Flowers** veri seti üzerinde eğitilmiştir.
+Bu proje, **TensorFlow** ve **Keras** kullanılarak oluşturulmuş bir **DCGAN (Deep Convolutional Generative Adversarial Network)** uygulamasıdır. Model, **Fashion MNIST** veri setindeki kıyafet görüntülerini öğrenerek, rastgele gürültüden (noise) tamamen yeni ve yapay kıyafet tasarımları üretir.
 
----
+## 🎯 Proje Hakkında
 
-## 🎯 Amaç
+GAN (Çekişmeli Üretici Ağlar), birbirleriyle yarışan iki sinir ağından oluşur:
 
-- CNN tabanlı bir görüntü sınıflandırma modeli geliştirmek
-- Data augmentation ile modelin genelleme yeteneğini artırmak
-- Eğitim ve doğrulama performanslarını görsel olarak analiz etmek
+1.  **Generator (Üretici):** Rastgele sayısal gürültüyü alıp gerçekçi bir resme dönüştürmeye çalışır.
+2.  **Discriminator (Ayırt Edici):** Kendisine gelen resmin gerçek (veri setinden) mi yoksa sahte (Generator üretimi) mi olduğunu anlamaya çalışır.
 
----
-
-## 🧠 Kullanılan Teknolojiler
-
-- Python
-- TensorFlow & Keras
-- TensorFlow Datasets
-- Matplotlib
-
----
-
-## 📂 Veri Seti
-
-**TF Flowers** veri seti kullanılmıştır.
-
-**Sınıflar:**
-- Daisy
-- Dandelion
-- Roses
-- Sunflowers
-- Tulips
-
-**Bölünme:**
-- %80 Eğitim
-- %20 Doğrulama
-
----
-
-## 🏗️ Model Özeti
-
-- 3 adet Convolution + MaxPooling bloğu  
-- 1 adet Dense katman  
-- Dropout ile overfitting önleme  
-- Softmax çıkış katmanı (5 sınıf)
-
----
-
-## 🔄 Data Augmentation
-
-Eğitim sırasında:
-- Yatay çevirme
-- Parlaklık ve kontrast değişimi
-- Rastgele kırpma  
-
-uygulanmıştır.
-
----
-
-## ⚙️ Eğitim
-
-- Optimizer: Adam  
-- Loss: Sparse Categorical Crossentropy  
-- Callback’ler:
-  - EarlyStopping
-  - ReduceLROnPlateau
-  - ModelCheckpoint
-
----
-## 📊 Çıktı
-![Görsel](images/img-1.png)
+Bu projede, eğitim süreci boyunca Generator daha gerçekçi resimler üretmeyi öğrenirken, Discriminator da sahteleri daha iyi yakalamayı öğrenir.
