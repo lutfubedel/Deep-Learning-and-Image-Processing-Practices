@@ -11,11 +11,8 @@ Bu proje, **YOLOv8 (You Only Look Once)** mimarisini kullanarak trafik levhalar�
 
 - [Proje Hakkında](#-proje-hakkında)
 - [Veri Seti](#-veri-seti)
-- [Kurulum](#-kurulum)
-- [Kullanım: Eğitim (Training)](#-kullanım-eğitim-training)
-- [Kullanım: Test (Inference)](#-kullanım-test-inference)
-- [Dosya Yapısı](#-dosya-yapısı)
 - [Sonuçlar](#-sonuçlar)
+- [Kurulum](#-kurulum)
 
 ---
 
@@ -39,6 +36,23 @@ Modelin eğitimi için Roboflow Universe üzerindeki açık kaynaklı bir veri s
 > **Not:** Veri setini indirdikten sonra klasör yapısının `data.yaml` dosyası ile uyumlu olduğundan emin olun.
 
 ---
+
+## 📸 Sonuçlar
+
+Modelin test aşamasındaki performansı aşağıda gösterilmiştir.
+
+<table>
+  <tr>
+    <td align="center"><b>Orijinal Görüntü</b></td>
+    <td align="center"><b>Tespit Sonucu</b></td>
+  </tr>
+  <tr>
+    <td><img src="images/test_1.jpg" width="400"></td>
+    <td><img src="images/test_1_detection.jpg" width="400"></td>
+  </tr>
+</table>
+
+
 
 ## ⚙️ Kurulum
 
