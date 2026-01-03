@@ -48,7 +48,7 @@ Modelin test aşamasındaki performansı aşağıda gösterilmiştir.
   </tr>
   <tr>
     <td><img src="images/test_1.jpg" width="400"></td>
-    <td><img src="images/test_1_detection.jpg" width="400"></td>
+    <td><img src="images/test_1_detections.jpg" width="400"></td>
   </tr>
 </table>
 
