@@ -1,22 +1,50 @@
-# 🩻 DenseNet121 ile Zatürre (Pneumonia) Tespiti
+# 🚦 Traffic Sign Detection with YOLOv8
 
-Bu proje, **Derin Öğrenme (Deep Learning)** ve **Transfer Learning** yöntemlerini kullanarak akciğer röntgeni (X-Ray) görüntüleri üzerinden zatürre teşhisi koymayı amaçlar. Model, önceden eğitilmiş **DenseNet121** mimarisini temel alır ve %90+ başarı oranını hedefler.
+Bu proje, **YOLOv8 (You Only Look Once)** mimarisini kullanarak trafik levhalarını (hız sınırları, dur, girilmez vb.) gerçek zamanlı veya statik görüntüler üzerinde tespit etmek için geliştirilmiştir. Otonom sürüş ve trafik analizi sistemleri için temel bir prototip niteliğindedir.
 
-## 📌 Proje Hakkında
+![YOLOv8](https://img.shields.io/badge/YOLOv8-Ultralytics-blue)
+![Python](https://img.shields.io/badge/Python-3.8%2B-yellow)
+![OpenCV](https://img.shields.io/badge/OpenCV-Computer%20Vision-green)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
-Proje, Kaggle üzerindeki "Chest X-Ray Images (Pneumonia)" veri setini kullanır. Görüntüleri "NORMAL" ve "PNEUMONIA" (Zatürre) olarak iki sınıfa ayırır.
+## 📁 İçindekiler
 
-Kullanılan temel teknikler:
-* **Transfer Learning:** ImageNet ağırlıklarıyla eğitilmiş DenseNet121.
-* **Data Augmentation:** Eğitim verisini çeşitlendirmek için döndürme, parlaklık ve yatay çevirme işlemleri.
-* **Callbacks:** Early Stopping, Model Checkpoint ve Learning Rate azaltma stratejileri.
+- [Proje Hakkında](#-proje-hakkında)
+- [Veri Seti](#-veri-seti)
+- [Kurulum](#-kurulum)
+- [Kullanım: Eğitim (Training)](#-kullanım-eğitim-training)
+- [Kullanım: Test (Inference)](#-kullanım-test-inference)
+- [Dosya Yapısı](#-dosya-yapısı)
+- [Sonuçlar](#-sonuçlar)
 
-## 📂 Veri Seti
+---
 
-Veri setini aşağıdaki linkten indirebilirsiniz:
-[Kaggle - Chest X-Ray Images (Pneumonia)](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia)
+## 🧐 Proje Hakkında
 
-**Önemli:** İndirdiğiniz veri setini proje klasörüne `chest_xray` adıyla çıkartmalısınız.
+Bu proje, Ultralytics kütüphanesi kullanılarak eğitilmiş özel bir nesne algılama modelidir. Proje aşağıdaki adımları kapsar:
+1. Trafik levhalarını içeren veri setinin hazırlanması.
+2. YOLOv8n (Nano) modelinin bu veri seti ile eğitilmesi (Transfer Learning).
+3. Eğitilen modelin OpenCV kullanılarak test edilmesi ve sonuçların görselleştirilmesi.
 
-## 📊 Çıktı
-![Görsel](images/Figure_2.png)
+---
+
+## 📊 Veri Seti
+
+Modelin eğitimi için Roboflow Universe üzerindeki açık kaynaklı bir veri seti kullanılmıştır.
+
+- **Veri Seti Adı:** Traffic Sign Detection
+- **Kaynak:** [Roboflow Linki](https://universe.roboflow.com/university-km5u7/traffic-sign-detection-yolov8-awuus/dataset/11)
+- **İçerik:** Eğitim (Train), Doğrulama (Valid) ve Test resimleri ile YOLO formatındaki etiketler.
+
+> **Not:** Veri setini indirdikten sonra klasör yapısının `data.yaml` dosyası ile uyumlu olduğundan emin olun.
+
+---
+
+## ⚙️ Kurulum
+
+Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin:
+
+### 1. Projeyi Klonlayın
+```bash
+git clone [https://github.com/kullaniciadi/traffic-sign-detection.git](https://github.com/kullaniciadi/traffic-sign-detection.git)
+cd traffic-sign-detection
