@@ -12,7 +12,6 @@ Bu proje, **YOLOv8 (You Only Look Once)** mimarisini kullanarak trafik levhalar�
 - [Proje Hakkında](#-proje-hakkında)
 - [Veri Seti](#-veri-seti)
 - [Sonuçlar](#-sonuçlar)
-- [Kurulum](#-kurulum)
 
 ---
 
@@ -54,11 +53,3 @@ Modelin test aşamasındaki performansı aşağıda gösterilmiştir.
 
 
 
-## ⚙️ Kurulum
-
-Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin:
-
-### 1. Projeyi Klonlayın
-```bash
-git clone [https://github.com/kullaniciadi/traffic-sign-detection.git](https://github.com/kullaniciadi/traffic-sign-detection.git)
-cd traffic-sign-detection
