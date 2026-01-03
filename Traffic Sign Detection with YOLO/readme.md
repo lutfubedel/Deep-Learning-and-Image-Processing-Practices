@@ -47,8 +47,8 @@ Modelin test aşamasındaki performansı aşağıda gösterilmiştir.
     <td align="center"><b>Tespit Sonucu</b></td>
   </tr>
   <tr>
-    <td><img src="images/test_1.jpg" width="600"></td>
-    <td><img src="images/test_1_detections.jpg" width="600"></td>
+    <td><img src="images/test_1.jpg" width="720"></td>
+    <td><img src="images/test_1_detections.jpg" width="720"></td>
   </tr>
 </table>
 
