@@ -24,3 +24,19 @@ Bu proje, **Ultralytics YOLOv8** ve **OpenCV** kütüphanelerini kullanarak vide
 ├── yolov8n.pt               # İlk çalıştırmada otomatik inen model dosyası
 ├── output_video.avi         # Çıktı dosyası (Script çalıştıktan sonra oluşur)
 └── README.md                # Proje dokümantasyonu****
+```
+
+## 📸 Sonuçlar
+
+Modelin test aşamasındaki performansı aşağıda gösterilmiştir.
+
+<table>
+  <tr>
+    <td align="center" width="50%"><b>Orijinal Görüntü</b></td>
+    <td align="center" width="50%"><b>Tespit Sonucu</b></td>
+  </tr>
+  <tr>
+    <td><img src="images/test_1.jpg" width="100%"></td>
+    <td><img src="images/test_1_detections.jpg" width="100%"></td>
+  </tr>
+</table>
