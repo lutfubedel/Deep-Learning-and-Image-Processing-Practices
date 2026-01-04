@@ -32,11 +32,7 @@ Modelin test aşamasındaki performansı aşağıda gösterilmiştir.
 
 <table>
   <tr>
-    <td align="center" width="50%"><b>Orijinal Görüntü</b></td>
-    <td align="center" width="50%"><b>Tespit Sonucu</b></td>
-  </tr>
-  <tr>
-    <td><img src="images/test_1.jpg" width="100%"></td>
-    <td><img src="images/test_1_detections.jpg" width="100%"></td>
+    <td><img src="images/image_1.png" width="100%"></td>
+    <td><img src="images/image_2.png" width="100%"></td>
   </tr>
 </table>
