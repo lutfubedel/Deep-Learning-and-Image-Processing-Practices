@@ -60,9 +60,7 @@ Model 20 epoch boyunca eğitilmiş ve `binary_crossentropy` kaybı minimize edil
 ### Tahmin Örnekleri
 Aşağıda modelin doğrulama setindeki başarısı görülmektedir:
 
-| Girdi (Input) | Gerçek Maske (Ground Truth) | Tahmin (Prediction) |
-| :---: | :---: | :---: |
-| *(Resim Ekle)* | *(Resim Ekle)* | *(Resim Ekle)* |
+![Sonuclar](images/Figure_2.png)
 
 *(Not: `show_predictions` fonksiyonundan aldığınız çıktıyı buraya görsel olarak eklemeniz projeyi inceleyenler için çok faydalı olacaktır.)*
 
