@@ -35,8 +35,9 @@ Veri seti, farklı bölgeleri temsil eden "Tile" klasörlerinden oluşur. Her Ti
     │   │   └── masks/
     │   ├── Tile 2/
     │   └── ...
-    ├── main.py
+    ├── app.py
     └── README.md
+    └── requirements.txt
     ```
 
 2.  **Eğitimi başlatın:**
