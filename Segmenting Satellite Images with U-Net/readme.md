@@ -60,7 +60,7 @@ Model 20 epoch boyunca eğitilmiş ve `binary_crossentropy` kaybı minimize edil
 ### Tahmin Örnekleri
 Aşağıda modelin doğrulama setindeki başarısı görülmektedir:
 
-![Sonuclar](images/Figure_2.png)
+![Sonuclar](images/Figure_1.png)
 
 *(Not: `show_predictions` fonksiyonundan aldığınız çıktıyı buraya görsel olarak eklemeniz projeyi inceleyenler için çok faydalı olacaktır.)*
 
