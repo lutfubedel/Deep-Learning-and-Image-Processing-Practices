@@ -6,13 +6,6 @@ Bu proje, **Python**, **OpenCV** ve **MediaPipe** kütüphanelerini kullanarak g
 ![OpenCV](https://img.shields.io/badge/OpenCV-Computer%20Vision-green)
 ![MediaPipe](https://img.shields.io/badge/MediaPipe-Pose%20Estimation-orange)
 
-## 📋 İçindekiler
-- [Proje Hakkında](#proje-hakkında)
-- [Özellikler](#özellikler)
-- [Algoritma Mantığı](#algoritma-mantığı)
-- [Gereksinimler](#gereksinimler)
-- [Sonuçlar](#sonuçlar)
-
 ## 🚀 Proje Hakkında
 Bu uygulama, webcam veya video dosyası üzerinden insan vücudunu algılar ve **Kalça - Diz - Ayak Bileği** noktaları arasındaki açıyı trigonometrik olarak hesaplar. Bu açıya göre kişinin "Eğilme" (Squat Down) veya "Kalkma" (Squat Up) durumunda olduğunu belirleyerek tekrarları sayar.
 
