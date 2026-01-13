@@ -21,35 +21,13 @@ Projeyi çalıştırmadan önce bilgisayarınızda Python'un kurulu olması gere
 * `mediapipe` (Yüz tespiti)
 * `numpy` (Matematiksel hesaplamalar)
 
-## 📦 Kurulum
+## 🧠 Nasıl Çalışır?
+Bu proje, derin öğrenme (deep learning) sınıflandırması yerine geometrik öklid mesafesi mantığıyla çalışır. MediaPipe Face Mesh yüzdeki 468 noktayı (landmark) bize verir.
 
-Projeyi bilgisayarınıza kurmak için aşağıdaki adımları izleyin:
+Biz şu noktaları kullanıyoruz:
 
-1.  **Projeyi Klonlayın veya İndirin:**
-    ```bash
-    git clone [https://github.com/kullaniciadi/duygu-analizi.git](https://github.com/kullaniciadi/duygu-analizi.git)
-    cd duygu-analizi
-    ```
+* Şaşkınlık (Surprised): Kaş ortası ile göz bebeği arasındaki dikey mesafe ölçülür. Mesafe belirli bir eşik değerini (Threshold) geçerse kişi "Şaşkın" kabul edilir.
+* Mutluluk (Happy): Ağzın sağ ve sol köşeleri arasındaki yatay mesafe ölçülür. Gülümseme sırasında bu mesafe arttığı için eşik değeri geçildiğinde "Mutlu" kabul edilir.
+* Nötr (Neutral): Yukarıdaki koşullar sağlanmıyorsa ifade "Nötr"dür.
 
-2.  **Sanal Ortam Oluşturun (Önerilen):**
-    ```bash
-    # Windows için:
-    python -m venv venv
-    .\venv\Scripts\activate
-
-    # Mac/Linux için:
-    python3 -m venv venv
-    source venv/bin/activate
-    ```
-
-3.  **Gerekli Kütüphaneleri Yükleyin:**
-    ```bash
-    pip install mediapipe opencv-python numpy
-    ```
-
-## ▶️ Kullanım
-
-Kurulum tamamlandıktan sonra terminal üzerinden scripti çalıştırabilirsiniz:
-
-```bash
-python main.py
+Not: Eşik değerleri (25 ve 60 piksel) kameraya olan uzaklığa göre kod içerisinden optimize edilebilir.
