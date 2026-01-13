@@ -11,6 +11,7 @@ Bu proje, **Python**, **OpenCV** ve **MediaPipe** kütüphanelerini kullanarak g
 - [Özellikler](#özellikler)
 - [Algoritma Mantığı](#algoritma-mantığı)
 - [Gereksinimler](#gereksinimler)
+- [Sonuçlar](#sonuçlar)
 
 ## 🚀 Proje Hakkında
 Bu uygulama, webcam veya video dosyası üzerinden insan vücudunu algılar ve **Kalça - Diz - Ayak Bileği** noktaları arasındaki açıyı trigonometrik olarak hesaplar. Bu açıya göre kişinin "Eğilme" (Squat Down) veya "Kalkma" (Squat Up) durumunda olduğunu belirleyerek tekrarları sayar.
