@@ -9,8 +9,6 @@ Bu proje, **Python**, **OpenCV** ve **MediaPipe** kütüphanelerini kullanarak g
 ## 📋 İçindekiler
 - [Proje Hakkında](#proje-hakkında)
 - [Özellikler](#özellikler)
-- [Kurulum](#kurulum)
-- [Kullanım](#kullanım)
 - [Algoritma Mantığı](#algoritma-mantığı)
 - [Gereksinimler](#gereksinimler)
 
@@ -31,6 +29,12 @@ Sayacın çalışması için belirli açı eşikleri (thresholds) belirlenmişti
 * Squat Down (İniş): Eğer açı 90 derecenin altına düşerse, durum Asagi olarak işaretlenir.
 * Squat Up (Kalkış): Eğer açı 160 derecenin üzerine çıkarsa ve önceki durum Asagi ise, hareket tamamlanmış sayılır ve sayaç 1 artar.
 
+## 📦 Gereksinimler
+* Python 3.x
+* opencv-python
+* mediapipe
+* numpy
+  
 ## 📸 Sonuçlar
 
 Modelin test aşamasındaki performansı aşağıda gösterilmiştir.
