@@ -24,6 +24,13 @@ Bu uygulama, webcam veya video dosyası üzerinden insan vücudunu algılar ve *
 * **Görsel Arayüz:** Ekranda anlık tekrar sayısı, hareket durumu ve açı değerinin gösterimi.
 * **Hata Toleransı:** Görüntüde insan algılanamadığında programın çökmesini engelleyen yapı.
 
+## 🧠 Algoritma Mantığı
+Sayacın çalışması için belirli açı eşikleri (thresholds) belirlenmiştir:
+* Noktalar: Sol Kalça, Sol Diz ve Sol Ayak Bileği koordinatları alınır.
+* Açı Hesabı: arctant2 fonksiyonu ile dizdeki açı hesaplanır.
+* Squat Down (İniş): Eğer açı 90 derecenin altına düşerse, durum Asagi olarak işaretlenir.
+* Squat Up (Kalkış): Eğer açı 160 derecenin üzerine çıkarsa ve önceki durum Asagi ise, hareket tamamlanmış sayılır ve sayaç 1 artar.
+
 ## 📸 Sonuçlar
 
 Modelin test aşamasındaki performansı aşağıda gösterilmiştir.
