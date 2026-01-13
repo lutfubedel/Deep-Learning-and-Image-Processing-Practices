@@ -1,78 +1,45 @@
-# 🛰️ Aerial Imagery Semantic Segmentation with U-Net
+# 🏋️‍♂️ AI Destekli Squat Sayacı (AI Squat Counter)
 
-Bu proje, **U-Net** derin öğrenme mimarisini kullanarak hava görüntüleri (aerial imagery) üzerinde **anlamsal segmentasyon (semantic segmentation)** işlemini gerçekleştirir. Amaç, uydu veya drone görüntülerindeki belirli alanları (örneğin binalar, yollar veya su kütleleri) piksel bazında sınıflandırmaktır.
+Bu proje, **Python**, **OpenCV** ve **MediaPipe** kütüphanelerini kullanarak gerçek zamanlı görüntü işleme ile squat egzersizlerini takip eden, açıları hesaplayan ve tekrarları otomatik olarak sayan bir uygulamadır.
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange)
 ![OpenCV](https://img.shields.io/badge/OpenCV-Computer%20Vision-green)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
+![MediaPipe](https://img.shields.io/badge/MediaPipe-Pose%20Estimation-orange)
 
-## 📌 Proje Hakkında
+## 🚀 Proje Hakkında
+Bu uygulama, webcam veya video dosyası üzerinden insan vücudunu algılar ve **Kalça - Diz - Ayak Bileği** noktaları arasındaki açıyı trigonometrik olarak hesaplar. Bu açıya göre kişinin "Eğilme" (Squat Down) veya "Kalkma" (Squat Up) durumunda olduğunu belirleyerek tekrarları sayar.
 
-Bu çalışmada, Encoder-Decoder yapısına sahip olan ve biyomedikal görüntü segmentasyonu için geliştirilmiş ancak hava görüntülerinde de çok başarılı olan **U-Net** modeli kullanılmıştır.
+## ✨ Özellikler
+* **Gerçek Zamanlı İskelet Takibi:** MediaPipe Pose modeli ile yüksek doğrulukta vücut analizi.
+* **Otomatik Açı Hesaplama:** NumPy kullanılarak eklem açılarının anlık hesaplanması.
+* **Durum Analizi:** "Hazır", "Aşağı" ve "Yukarı" durumlarını algılama.
+* **Görsel Arayüz:** Ekranda anlık tekrar sayısı, hareket durumu ve açı değerinin gösterimi.
+* **Hata Toleransı:** Görüntüde insan algılanamadığında programın çökmesini engelleyen yapı.
 
-**Modelin Temel Özellikleri:**
-* **Encoder (Daraltma Yolu):** Görüntüden özellikleri (kenar, doku vb.) çıkarır.
-* **Decoder (Genişletme Yolu):** Özellik haritasını orijinal görüntü boyutuna geri döndürür.
-* **Skip Connections (Atlama Bağlantıları):** Encoder'daki detaylı konumsal bilgileri Decoder'a aktararak segmentasyonun daha keskin sınırlarla yapılmasını sağlar.
+## 🧠 Algoritma Mantığı
+Sayacın çalışması için belirli açı eşikleri (thresholds) belirlenmiştir:
+* Noktalar: Sol Kalça, Sol Diz ve Sol Ayak Bileği koordinatları alınır.
+* Açı Hesabı: arctant2 fonksiyonu ile dizdeki açı hesaplanır.
+* Squat Down (İniş): Eğer açı 90 derecenin altına düşerse, durum Asagi olarak işaretlenir.
+* Squat Up (Kalkış): Eğer açı 160 derecenin üzerine çıkarsa ve önceki durum Asagi ise, hareket tamamlanmış sayılır ve sayaç 1 artar.
 
-## 📂 Veri Seti (Dataset)
+## 📦 Gereksinimler
+* Python 3.x
+* opencv-python
+* mediapipe
+* numpy
+  
+## 📸 Sonuçlar
 
-Projede kullanılan veri seti Kaggle üzerinden temin edilmiştir:
-[Semantic Segmentation of Aerial Imagery - Humans in the Loop](https://www.kaggle.com/datasets/humansintheloop/semantic-segmentation-of-aerial-imagery)
+Modelin test aşamasındaki performansı aşağıda gösterilmiştir.
 
-**Veri Seti Yapısı:**
-Veri seti, farklı bölgeleri temsil eden "Tile" klasörlerinden oluşur. Her Tile içinde `images` (orijinal görüntü) ve `masks` (etiket/maske) klasörleri bulunur.
-
-## 🚀 Kullanım
-
-1.  İndirdiğiniz veri setini proje ana dizinine `aeiral_dataset` adıyla çıkarın. Klasör yapısı şöyle olmalıdır:
-    ```
-    aerial-segmentation-unet/
-    ├── aeiral_dataset/
-    │   ├── Tile 1/
-    │   │   ├── images/
-    │   │   └── masks/
-    │   ├── Tile 2/
-    │   └── ...
-    ├── app.py
-    └── README.md
-    └── requirements.txt
-    ```
-
-2.  **Eğitimi başlatın:**
-    ```bash
-    python app.py
-    ```
-
-Kod çalıştırıldığında:
-* Veriler yüklenir ve ön işleme (resize, normalize) yapılır.
-* U-Net modeli oluşturulur ve eğitim başlar.
-* En iyi model `model_best.h5` olarak kaydedilir.
-* Eğitim sonunda kayıp (loss) grafiği ve örnek tahmin sonuçları ekranda gösterilir.
-
-## 📊 Sonuçlar
-
-### Eğitim Grafiği
-Model 20 epoch boyunca eğitilmiş ve `binary_crossentropy` kaybı minimize edilmiştir.
-
-*(Buraya eğitim sonucunda çıkan loss grafiğinizin ekran görüntüsünü ekleyebilirsiniz. Örn: `![Loss Graph](assets/loss_graph.png)`)*
-
-### Tahmin Örnekleri
-Aşağıda modelin doğrulama setindeki başarısı görülmektedir:
-
-![Sonuclar](images/Figure_1.png)
-
-*(Not: `show_predictions` fonksiyonundan aldığınız çıktıyı buraya görsel olarak eklemeniz projeyi inceleyenler için çok faydalı olacaktır.)*
-
-## 🛠️ Kullanılan Teknolojiler
-
-* **TensorFlow / Keras:** Model mimarisi ve eğitim.
-* **OpenCV:** Görüntü okuma ve işleme.
-* **NumPy:** Matris işlemleri.
-* **Matplotlib:** Veri görselleştirme.
-* **Scikit-Learn:** Veri setini eğitim/test olarak ayırma.
-
-## 📝 Lisans
-
-Bu proje MIT lisansı ile lisanslanmıştır. Detaylar için `LICENSE` dosyasına bakınız.
+<table>
+  <tr>
+    <td align="center" width="50%"><b>Orijinal Görüntü</b></td>
+    <td align="center" width="50%"><b>Tespit Sonucu</b></td>
+  </tr>
+  <tr>
+    <td><img src="images/img_1.png" width="100%"></td>
+    <td><img src="images/imag_2.png" width="100%"></td>
+  </tr>
+</table>
