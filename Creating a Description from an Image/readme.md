@@ -1,23 +1,30 @@
-# 🧥 Fashion MNIST - DCGAN ile Görüntü Üretimi
+# 🖼️ Image Captioning AI (Resimden Metin Üretme)
 
-Bu proje, **TensorFlow** ve **Keras** kullanılarak oluşturulmuş bir **DCGAN (Deep Convolutional Generative Adversarial Network)** uygulamasıdır. Model, **Fashion MNIST** veri setindeki kıyafet görüntülerini öğrenerek, rastgele gürültüden (noise) tamamen yeni ve yapay kıyafet tasarımları üretir.
+Bu proje, **Deep Learning** ve **Hugging Face Transformers** kütüphanesini kullanarak görselleri analiz eder ve içerikleri hakkında İngilizce açıklamalar (caption) üretir. Proje kapsamında iki farklı son teknoloji (State-of-the-Art) mimari kullanılmıştır.
 
-## 🎯 Proje Hakkında
+## 🚀 Özellikler
 
-GAN (Çekişmeli Üretici Ağlar), birbirleriyle yarışan iki sinir ağından oluşur:
+* **İki Farklı Model Mimarisi:**
+    1.  **BLIP (Bootstrapping Language-Image Pre-training):** Salesforce tarafından geliştirilen, görsel ve dilsel anlayışı birleştiren güçlü bir model.
+    2.  **ViT-GPT2 (Vision Transformer + GPT-2):** Görüntü işleme için Vision Transformer (ViT) ve metin üretimi için GPT-2 kullanan hibrit yapı.
+* **URL Desteği:** İnternet üzerindeki herhangi bir resim URL'si ile çalışabilir.
+* **GPU Hızlandırma:** CUDA destekli donanımlarda (ViT-GPT2 scripti için) otomatik GPU kullanımı entegre edilmiştir.
 
-1.  **Generator (Üretici):** Rastgele sayısal gürültüyü alıp gerçekçi bir resme dönüştürmeye çalışır.
-2.  **Discriminator (Ayırt Edici):** Kendisine gelen resmin gerçek (veri setinden) mi yoksa sahte (Generator üretimi) mi olduğunu anlamaya çalışır.
+## 🛠️ Kurulum
 
-Bu projede, eğitim süreci boyunca Generator daha gerçekçi resimler üretmeyi öğrenirken, Discriminator da sahteleri daha iyi yakalamayı öğrenir.
+Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin.
 
-## 🖼️ Üretilen Görüntüler (Eğitim Süreci)
+### 1. Depoyu Klonlayın veya İndirin
+Proje dosyalarını bilgisayarınıza indirin ve proje dizinine gidin.
 
-Aşağıda, eğitim süreci boyunca (Epoch'lar ilerledikçe) modelin gürültüden anlamlı kıyafetler oluşturma sürecini gösteren örnekler yer almaktadır:
+### 2. Sanal Ortam Oluşturun (Önerilen)
+Sistem kütüphanelerinizi etkilememek için bir `venv` oluşturun:
 
-| Başlangıç (Epoch 1) | Gelişme (Epoch 5) |
-| :---: | :---: |
-| ![Epoch 1](generated_images/image_at_epoch_001.png) | ![Epoch 10](generated_images/image_at_epoch_005.png) |
-| **Gelişme (Epoch 10)** | **Sonuç (Epoch 20)** |
-| ![Epoch 25](generated_images/image_at_epoch_010.png) | ![Epoch 50](generated_images/image_at_epoch_020.png) |
+```bash
+# Windows için
+python -m venv venv
+.\venv\Scripts\activate
 
+# macOS/Linux için
+python3 -m venv venv
+source venv/bin/activate
