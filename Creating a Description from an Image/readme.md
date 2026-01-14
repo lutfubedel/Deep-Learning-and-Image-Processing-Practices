@@ -12,17 +12,16 @@ Bu proje, **Deep Learning** ve **Hugging Face Transformers** kütüphanesini kul
 
 ## 📸 Sonuçlar
 
-Modelin test aşamasındaki performansı aşağıda gösterilmiştir.
+Modelin örnek çıktıları aşağıda verilmiştir
 
 <table>
   <tr>
-    <td><img src="[images/img_1.png](https://storage.googleapis.com/sfr-vision-language-research/BLIP/demo.jpg)" width="100%"></td>
-    <td><img src="images/imag_2.png" width="100%"></td>
+    <td width="50%"><img src="https://storage.googleapis.com/sfr-vision-language-research/BLIP/demo.jpg" width="100%"></td>
+    <td width="50%"><img src="images/imag_2.png" width="100%"></td>
   </tr>
   <tr>
-    <td align="center" width="50%"><b>Orijinal Görüntü</b></td>
-    <td align="center" width="50%"><b>Tespit Sonucu</b></td>
+    <td align="center"><b>Orijinal Görüntü</b></td>
+    <td align="center"><b>Tespit Sonucu</b></td>
   </tr>
-
 </table>
 
