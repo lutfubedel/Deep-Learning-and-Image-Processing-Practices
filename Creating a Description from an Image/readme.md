@@ -10,21 +10,19 @@ Bu proje, **Deep Learning** ve **Hugging Face Transformers** kütüphanesini kul
 * **URL Desteği:** İnternet üzerindeki herhangi bir resim URL'si ile çalışabilir.
 * **GPU Hızlandırma:** CUDA destekli donanımlarda (ViT-GPT2 scripti için) otomatik GPU kullanımı entegre edilmiştir.
 
-## 🛠️ Kurulum
+## 📸 Sonuçlar
 
-Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin.
+Modelin test aşamasındaki performansı aşağıda gösterilmiştir.
 
-### 1. Depoyu Klonlayın veya İndirin
-Proje dosyalarını bilgisayarınıza indirin ve proje dizinine gidin.
+<table>
+  <tr>
+    <td><img src="images/img_1.png" width="100%"></td>
+    <td><img src="images/imag_2.png" width="100%"></td>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><b>Orijinal Görüntü</b></td>
+    <td align="center" width="50%"><b>Tespit Sonucu</b></td>
+  </tr>
 
-### 2. Sanal Ortam Oluşturun (Önerilen)
-Sistem kütüphanelerinizi etkilememek için bir `venv` oluşturun:
+</table>
 
-```bash
-# Windows için
-python -m venv venv
-.\venv\Scripts\activate
-
-# macOS/Linux için
-python3 -m venv venv
-source venv/bin/activate
