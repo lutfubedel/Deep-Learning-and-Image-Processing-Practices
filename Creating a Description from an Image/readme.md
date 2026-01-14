@@ -16,7 +16,7 @@ Modelin test aşamasındaki performansı aşağıda gösterilmiştir.
 
 <table>
   <tr>
-    <td><img src="images/img_1.png" width="100%"></td>
+    <td><img src="[images/img_1.png](https://storage.googleapis.com/sfr-vision-language-research/BLIP/demo.jpg)" width="100%"></td>
     <td><img src="images/imag_2.png" width="100%"></td>
   </tr>
   <tr>
