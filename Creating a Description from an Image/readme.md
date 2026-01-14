@@ -20,7 +20,7 @@ Modelin örnek çıktıları aşağıda verilmiştir
     <td width="50%"><img src="images/imag_2.png" width="100%"></td>
   </tr>
   <tr>
-    <td align="center"><b>Orijinal Görüntü</b></td>
+    <td align="center"><b>A woman sitting on the beach with her dog</b></td>
     <td align="center"><b>Tespit Sonucu</b></td>
   </tr>
 </table>
