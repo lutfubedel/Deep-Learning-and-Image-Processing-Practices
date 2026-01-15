@@ -11,7 +11,6 @@ Bu proje, PyTorch kullanarak **Neural Style Transfer (NST)** algoritmasının bi
 * **İlerleme Çubuğu:** `tqdm` kütüphanesi ile eğitim adımları görsel olarak takip edilebilir.
 
 ## 🧠 Teknik Detaylar
-Bu implementasyon şu adımları izler:
 
 * Görüntü Yükleme: Resimler yüklenir, VGG19'un beklediği boyuta ve normalizasyon değerlerine getirilir.
 * Model: VGG19'un "features" kısmı alınır ve ağırlıkları dondurulur (frozen).
