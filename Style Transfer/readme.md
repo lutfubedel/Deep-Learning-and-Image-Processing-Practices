@@ -1,73 +1,40 @@
-# CNN ile Çiçek Türü Sınıflandırma
+# PyTorch ile Sinirsel Stil Aktarımı (Neural Style Transfer)
 
-Bu proje, **TensorFlow ve Keras** kullanılarak **Convolutional Neural Network (CNN)** mimarisi ile çiçek görüntülerinin sınıflandırılmasını amaçlamaktadır.  
-Model, **TF Flowers** veri seti üzerinde eğitilmiştir.
+Bu proje, PyTorch kullanarak **Neural Style Transfer (NST)** algoritmasının bir uygulamasını içerir. Leon A. Gatys ve arkadaşlarının geliştirdiği bu teknik, bir görüntünün (içerik) ana hatlarını korurken, başka bir görüntünün (stil) sanatsal dokusunu ve renklerini ona aktararak yeni bir sanat eseri oluşturur.
 
----
+## 🚀 Özellikler
 
-## 🎯 Amaç
+* **VGG19 Mimarisi:** Özellik çıkarımı (feature extraction) için önceden eğitilmiş VGG19 ağı kullanılır.
+* **Gram Matrisi:** Stil temsili için Gram Matrisleri hesaplanır.
+* **Özelleştirilebilir Ağırlıklar:** Stil ve içerik dengesi (alpha/beta oranı) ayarlanabilir.
+* **CUDA Desteği:** GPU varsa otomatik algılar ve işlemi hızlandırır.
+* **İlerleme Çubuğu:** `tqdm` kütüphanesi ile eğitim adımları görsel olarak takip edilebilir.
 
-- CNN tabanlı bir görüntü sınıflandırma modeli geliştirmek
-- Data augmentation ile modelin genelleme yeteneğini artırmak
-- Eğitim ve doğrulama performanslarını görsel olarak analiz etmek
+## 🧠 Teknik Detaylar
+Bu implementasyon şu adımları izler:
 
----
+* Görüntü Yükleme: Resimler yüklenir, VGG19'un beklediği boyuta ve normalizasyon değerlerine getirilir.
+* Model: VGG19'un "features" kısmı alınır ve ağırlıkları dondurulur (frozen).
+* Kayıp Fonksiyonları (Loss Functions):
+* Content Loss: conv4_2 katmanındaki özellik farkları.
+* Style Loss: conv1_1'den conv5_1'e kadar olan katmanlardaki Gram Matris farkları.
+* Optimizasyon: Orijinal resmin bir kopyası (target), Adam optimizasyonu ile her adımda güncellenerek stil ve içerik kaybını minimize etmeye çalışır.
 
-## 🧠 Kullanılan Teknolojiler
+## 📸 Sonuçlar
 
-- Python
-- TensorFlow & Keras
-- TensorFlow Datasets
-- Matplotlib
+Modelin örnek çıktıları aşağıda verilmiştir
 
----
+<table align="center">
+  <tr>
+    <td align="center" width="33%"><b>İçerik (Content)</b></td>
+    <td align="center" width="33%"><b>Stil (Style)</b></td>
+    <td align="center" width="33%"><b>Sonuç (Output)</b></td>
+  </tr>
+  <tr>
+    <td><img src="content.jpeg" width="100%"></td>
+    <td><img src="style.jpg" width="100%"></td>
+    <td><img src="Figure_1.png" width="100%"></td>
+  </tr>
+</table>
 
-## 📂 Veri Seti
 
-**TF Flowers** veri seti kullanılmıştır.
-
-**Sınıflar:**
-- Daisy
-- Dandelion
-- Roses
-- Sunflowers
-- Tulips
-
-**Bölünme:**
-- %80 Eğitim
-- %20 Doğrulama
-
----
-
-## 🏗️ Model Özeti
-
-- 3 adet Convolution + MaxPooling bloğu  
-- 1 adet Dense katman  
-- Dropout ile overfitting önleme  
-- Softmax çıkış katmanı (5 sınıf)
-
----
-
-## 🔄 Data Augmentation
-
-Eğitim sırasında:
-- Yatay çevirme
-- Parlaklık ve kontrast değişimi
-- Rastgele kırpma  
-
-uygulanmıştır.
-
----
-
-## ⚙️ Eğitim
-
-- Optimizer: Adam  
-- Loss: Sparse Categorical Crossentropy  
-- Callback’ler:
-  - EarlyStopping
-  - ReduceLROnPlateau
-  - ModelCheckpoint
-
----
-## 📊 Çıktı
-![Görsel](images/img-1.png)
