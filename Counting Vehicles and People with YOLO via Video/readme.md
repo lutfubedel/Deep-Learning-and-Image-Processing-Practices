@@ -1,5 +1,10 @@
 # 👁️ YOLOv8 ile Nesne Takibi ve Sayma Sistemleri
 
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
+![YOLOv8](https://img.shields.io/badge/YOLO-v8-green)
+![OpenCV](https://img.shields.io/badge/OpenCV-Latest-red)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
 Bu depo (repository), **YOLOv8**, **OpenCV** ve **Python** kullanılarak geliştirilmiş gerçek zamanlı nesne tespiti, takibi (tracking) ve sayımı projelerini içerir. 
 
 Proje kapsamında iki temel bilgisayarlı görü (computer vision) uygulaması geliştirilmiştir:
@@ -32,3 +37,13 @@ Kamera görüntüsünü dikey bir çizgi ile ikiye bölerek insanların sağa (G
 
 ---
 
+## 📸 Sonuçlar
+
+Modelin test aşamasındaki performansı aşağıda gösterilmiştir.
+
+<table>
+  <tr>
+    <td><img src="images/image_1.png" width="100%"></td>
+    <td><img src="images/image_2.png" width="100%"></td>
+  </tr>
+</table>
