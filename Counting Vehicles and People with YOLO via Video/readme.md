@@ -36,14 +36,13 @@ Kamera görüntüsünü dikey bir çizgi ile ikiye bölerek insanların sağa (G
     * Geçiş anında görsel uyarı (Renk değişimi).
 
 ---
-
 ## 📸 Sonuçlar
 
 Modelin test aşamasındaki performansı aşağıda gösterilmiştir.
 
-<table>
+<table width="100%">
   <tr>
-    <td><img src="images/Frame_1.png" width="100%"></td>
-    <td><img src="images/Frame_2.png" width="100%"></td>
+    <td width="50%"><img src="images/Frame_1.png" width="100%"></td>
+    <td width="50%"><img src="images/Frame_2.png" width="100%"></td>
   </tr>
 </table>
