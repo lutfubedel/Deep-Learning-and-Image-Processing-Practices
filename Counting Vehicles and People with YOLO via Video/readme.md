@@ -43,7 +43,7 @@ Modelin test aşamasındaki performansı aşağıda gösterilmiştir.
 
 <table>
   <tr>
-    <td><img src="images/image_1.png" width="100%"></td>
-    <td><img src="images/image_2.png" width="100%"></td>
+    <td><img src="images/Frame_1.png" width="100%"></td>
+    <td><img src="images/Frame_2.png" width="100%"></td>
   </tr>
 </table>
