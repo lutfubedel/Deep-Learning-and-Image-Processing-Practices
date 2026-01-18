@@ -1,41 +1,48 @@
-# 👁️ YOLOv8 ile Nesne Takibi ve Sayma Sistemleri
+# RSNA Kemik Yaşı Tahmini (Bone Age Prediction)
 
-![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
-![YOLOv8](https://img.shields.io/badge/YOLO-v8-green)
-![OpenCV](https://img.shields.io/badge/OpenCV-Latest-red)
-![License](https://img.shields.io/badge/License-MIT-yellow)
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-Bu depo (repository), **YOLOv8**, **OpenCV** ve **Python** kullanılarak geliştirilmiş gerçek zamanlı nesne tespiti, takibi (tracking) ve sayımı projelerini içerir. 
+Bu proje, el röntgen görüntülerini kullanarak çocukların kemik yaşını (ay cinsinden) tahmin eden derin öğrenme tabanlı bir **Regresyon** modelidir. Model, **Konvolüsyonel Sinir Ağları (CNN)** kullanılarak oluşturulmuş ve RSNA Kemik Yaşı veri seti üzerinde eğitilmiştir.
 
-Proje kapsamında iki temel bilgisayarlı görü (computer vision) uygulaması geliştirilmiştir:
-1. **Trafik Analizi:** Araç sınıflandırma ve şerit sayımı.
-2. **Kalabalık Analizi:** İnsan giriş-çıkış (yönlü) sayımı.
+## 📋 İçindekiler
+- [Proje Hakkında](#proje-hakkında)
+- [Veri Seti ve Klasör Yapısı](#veri-seti-ve-klasör-yapısı)
+- [Kurulum](#kurulum)
+- [Kullanım](#kullanım)
+- [Model Mimarisi](#model-mimarisi)
+- [Sonuçlar](#sonuçlar)
 
----
+## 🧐 Proje Hakkında
+Tıbbi görüntüleme alanında, çocukların gelişim takibi için kemik yaşı tespiti önemlidir. Bu proje, manuel ölçümlerin getirdiği zaman kaybını ve hata payını en aza indirmek amacıyla otomatik bir tahmin sistemi sunar.
 
-## 📂 Proje İçeriği
+**Öne Çıkan Özellikler:**
+* **Görüntü İşleme:** OpenCV ile gri tonlama, yeniden boyutlandırma (128x128) ve normalizasyon.
+* **Veri Artırma (Data Augmentation):** Modelin genelleme yeteneğini artırmak için `ImageDataGenerator` kullanımı.
+* **Özelleştirilmiş CNN:** Regresyon problemi için optimize edilmiş mimari.
+* **Callbacks:** `EarlyStopping`, `ModelCheckpoint` ve `ReduceLROnPlateau` ile verimli eğitim.
 
-### 1. 🚗 Trafik ve Araç Sayımı (`main_car.py`)
-Belirlenen sanal bir çizgiyi geçen araçları tespit eder, takip eder ve sınıfına göre (Araba, Kamyon, Otobüs vb.) sayar.
+## 📂 Veri Seti ve Klasör Yapısı
+Bu proje **Kaggle** üzerindeki RSNA Bone Age veri setini kullanır. 
 
-* **Teknoloji:** YOLOv8 Tracking + Vektörel Geometri.
-* **Yöntem:** `Cross Product` (Vektörel Çarpım) yöntemi ile aracın çizginin hangi tarafında olduğu hesaplanır.
-* **Özellikler:**
-    * Çoklu sınıf ayrımı (Car, Truck, Bus, Motorcycle).
-    * Mükerrer sayımı önleyen ID takibi (ByteTrack).
-    * Görselleştirilmiş takip çizgileri.
+1.  Veri setini şu adresten indirin: [RSNA Bone Age Dataset](https://www.kaggle.com/datasets/kmader/rsna-bone-age)
+2.  İndirdiğiniz dosyaları proje ana dizinine çıkarın. Klasör yapınızın aşağıdaki gibi olduğundan emin olun:
 
-### 2. 🚶 İnsan Giriş-Çıkış Sayımı (`main_people.py`)
-Kamera görüntüsünü dikey bir çizgi ile ikiye bölerek insanların sağa (Giren) veya sola (Çıkan) geçişlerini analiz eder.
+```text
+proje-klasoru/
+│
+├── boneage-training-dataset/  # Resimlerin olduğu klasör (Kaggle'dan inen)
+│   ├── 1377.png
+│   ├── 1378.png
+│   └── ...
+├── boneage-training-dataset.csv  # Etiket dosyası
+├── result_img
+├── main.py                    # Python kodunuz
+├── requirements.txt           # Gerekli kütüphaneler
+└── README.md
+```
 
-* **Teknoloji:** YOLOv8 Tracking + Koordinat Delta Analizi.
-* **Yöntem:** Nesnenin bir önceki karedeki (frame) X konumu ile şimdiki X konumu karşılaştırılarak hareket vektörü belirlenir.
-* **Özellikler:**
-    * Sadece "Person" sınıfı filtrelenir.
-    * Giren ve Çıkan sayaçları ayrı ayrı tutulur.
-    * Geçiş anında görsel uyarı (Renk değişimi).
-
----
 ## 📸 Sonuçlar
 
 Modelin test aşamasındaki performansı aşağıda gösterilmiştir.
