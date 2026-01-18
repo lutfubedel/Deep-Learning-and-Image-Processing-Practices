@@ -1,4 +1,4 @@
-# Deep Learning & Image Processing Practices
+# Deep Learning & Image Processing Projects
 
 Bu depo, Derin Öğrenme ve Bilgisayarlı Görü alanlarında geliştirdiğim, gerçek hayat senaryolarına ve akademik çalışmalara odaklanan projeleri içerir. Her bir proje, modern algoritmaların pratik uygulamalarını ve performans analizlerini barındırır.
 
