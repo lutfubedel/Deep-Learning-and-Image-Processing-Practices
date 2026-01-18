@@ -7,7 +7,7 @@ Bu depo, Derin Öğrenme ve Bilgisayarlı Görü alanlarında geliştirdiğim, g
 | # | Proje İsmi | Açıklama & Amaç | Teknoloji Yığını | Kod |
 |:-:| :--- | :--- | :--- | :---: |
 | **1** | **Kemik Yaşı Tahmini** | El röntgen görüntülerini kullanarak çocukların kemik yaşını (ay cinsinden) tahmin eden derin öğrenme tabanlı bir Regresyon modelidir (CNN) | ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange) | [📂](./Bone_Age_Estimation) |
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange) | [📂](./Bone Age Estimation) |
 | **2** | **Neural Style Transfer** | Bir resmin sanatsal stilini alıp başka bir fotoğrafa transfer eder. (VGG19) | ![PyTorch](https://img.shields.io/badge/-PyTorch-EE4C2C?logo=pytorch&logoColor=white) ![NumPy](https://img.shields.io/badge/-NumPy-013243?logo=numpy&logoColor=white) | [📂 Git](./Neural_Style_Transfer) |
 | **3** | **YOLO Object Detection** | Trafik veya güvenlik kamerası görüntülerinden gerçek zamanlı nesne/araç tespiti yapar. | ![YOLOv8](https://img.shields.io/badge/-YOLOv8-00FFFF?logo=yolo&logoColor=black) ![OpenCV](https://img.shields.io/badge/-OpenCV-5C3EE8?logo=opencv&logoColor=white) | [📂 Git](./YOLO_Detection) |
 | **4** | **Lane Tracking System** | Otoyol görüntülerinden şerit tespiti ve takibi yapan otonom sürüş modülü. | ![OpenCV](https://img.shields.io/badge/-OpenCV-5C3EE8?logo=opencv&logoColor=white) ![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white) | [📂 Git](./Lane_Tracking) |
