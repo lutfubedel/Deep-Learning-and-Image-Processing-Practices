@@ -6,14 +6,6 @@
 
 Bu proje, el röntgen görüntülerini kullanarak çocukların kemik yaşını (ay cinsinden) tahmin eden derin öğrenme tabanlı bir **Regresyon** modelidir. Model, **Konvolüsyonel Sinir Ağları (CNN)** kullanılarak oluşturulmuş ve RSNA Kemik Yaşı veri seti üzerinde eğitilmiştir.
 
-## 📋 İçindekiler
-- [Proje Hakkında](#proje-hakkında)
-- [Veri Seti ve Klasör Yapısı](#veri-seti-ve-klasör-yapısı)
-- [Kurulum](#kurulum)
-- [Kullanım](#kullanım)
-- [Model Mimarisi](#model-mimarisi)
-- [Sonuçlar](#sonuçlar)
-
 ## 🧐 Proje Hakkında
 Tıbbi görüntüleme alanında, çocukların gelişim takibi için kemik yaşı tespiti önemlidir. Bu proje, manuel ölçümlerin getirdiği zaman kaybını ve hata payını en aza indirmek amacıyla otomatik bir tahmin sistemi sunar.
 
