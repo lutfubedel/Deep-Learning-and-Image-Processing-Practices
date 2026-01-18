@@ -2,7 +2,7 @@
 
 Bu depo, Derin Öğrenme ve Bilgisayarlı Görü alanlarında geliştirdiğim, gerçek hayat senaryolarına ve akademik çalışmalara odaklanan projeleri içerir. Her bir proje, modern algoritmaların pratik uygulamalarını ve performans analizlerini barındırır.
 
-## 🚀 Proje Kataloğu
+## Proje Kataloğu
 
 | # | Proje İsmi | Açıklama & Amaç | Teknoloji Yığını | Kod |
 |:-:| :--- | :--- | :--- | :---: |
