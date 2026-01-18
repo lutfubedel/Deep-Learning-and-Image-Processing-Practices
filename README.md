@@ -23,20 +23,3 @@ Bu depo, Derin Öğrenme ve Bilgisayarlı Görü alanlarında geliştirdiğim, g
 
 ---
 
-## 🛠 Genel Kurulum
-
-Projeleri yerel ortamınızda çalıştırmak için aşağıdaki genel adımları takip edebilirsiniz. *Her projenin kendi klasöründe daha spesifik `requirements.txt` dosyaları bulunabilir.*
-
-```bash
-# Repoyu klonlayın
-git clone [https://github.com/lutfubedel/Deep-Learning-and-Image-Processing-Practices.git](https://github.com/lutfubedel/Deep-Learning-and-Image-Processing-Practices.git)
-
-# Proje dizinine girin
-cd Deep-Learning-and-Image-Processing-Practices
-
-# Sanal ortam oluşturun ve aktif edin
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-
-# Temel bağımlılıkları yükleyin
-pip install torch torchvision opencv-python transformers numpy matplotlib
