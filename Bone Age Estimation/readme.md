@@ -44,6 +44,6 @@ Modelin test aşamasındaki performansı aşağıda gösterilmiştir.
   <tr>
     <td width="33%"><img src="result_img/Figure_1.png" width="100%"></td>
     <td width="33%"><img src="result_img/Figure_2.png" width="100%"></td>
-    <td width="33%"><img src="result_img/Figure_2.png" width="100%"></td>
+    <td width="33%"><img src="result_img/Figure_3.png" width="100%"></td>
   </tr>
 </table>
