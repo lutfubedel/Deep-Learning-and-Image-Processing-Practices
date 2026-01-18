@@ -45,12 +45,13 @@ proje-klasoru/
 
 ## 📸 Sonuçlar
 
-Modelin test aşamasındaki performansı aşağıda gösterilmiştir.
+Modelin test aşamasındaki performansı ve elde edilen grafikler aşağıdadır:
 
-<table width="100%">
-  <tr>
-    <td width="33%"><img src="result_img/Figure_1.png" width="100%"></td>
-    <td width="33%"><img src="result_img/Figure_2.png" width="100%"></td>
-    <td width="33%"><img src="result_img/Figure_3.png" width="100%"></td>
-  </tr>
-</table>
+### 1. Veri Seti Dağılımı
+![Kemik Yaşı Dağılımı](result_img/Figure_1.png)
+
+### 2. Eğitim Performansı (Loss/MAE)
+![Eğitim Grafiği](result_img/Figure_2.png)
+
+### 3. Örnek Tahminler
+![Tahmin Sonuçları](result_img/Figure_3.png)
